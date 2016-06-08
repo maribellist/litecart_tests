@@ -17,18 +17,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>store</td>
-	<td>5</td>
+	<td>storeEval</td>
+	<td>Math.floor(1 + Math.random()*9)</td>
 	<td>amount</td>
 </tr>
 <tr>
-	<td>storeEval</td>
-	<td>${amount}*20</td>
-	<td>total</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>css=li.product img</td>
+	<td>css=li.product a[title='Rubber Duck']</td>
 	<td></td>
 </tr>
 <tr>
@@ -42,9 +37,69 @@
 	<td>title</td>
 </tr>
 <tr>
+	<td>storeElementPresent</td>
+	<td>css=div#box-product strong.campaign-price</td>
+	<td>has_discount</td>
+</tr>
+<tr>
+	<td>if</td>
+	<td>${has_discount}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=div#box-product strong.campaign-price</td>
+	<td>price</td>
+</tr>
+<tr>
+	<td>else</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=div#box-product span.price</td>
+	<td>price</td>
+</tr>
+<tr>
+	<td>endIf</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${price}&quot;.substring(1)</td>
+	<td>price</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>${amount}*${price}</td>
+	<td>total</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>name=quantity</td>
 	<td>${amount}</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>name=options[Size]</td>
+	<td>has_size</td>
+</tr>
+<tr>
+	<td>if</td>
+	<td>${has_size}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=options[Size]</td>
+	<td>label=Small</td>
+</tr>
+<tr>
+	<td>endIf</td>
+	<td></td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>

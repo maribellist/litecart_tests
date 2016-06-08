@@ -1,0 +1,5 @@
+[
+  { title: "Green Duck", price: "$20" }
+ ,{ title: "Rubber Duck", price: "$18" }
+ ,{ title: "Pink Duck", price: "$20" }
+]
